@@ -2,7 +2,7 @@
 
 The goal of this repository is to predict the PaO2/FiO2 ratio from non-laboratory data
 
-# Literature review
+# Review of bilan2015comparison
 
 Primary application was predicting pao2/fio2 from spo2/fio2 in ards
 
