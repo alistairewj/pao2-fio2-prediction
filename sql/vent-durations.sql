@@ -33,7 +33,7 @@ with vd0 as
           -- if the current observation indicates mechanical ventilation is present
           -- calculate the time since the last vent event
           when MechVent=1 then
-            chartoffset - chartoffset_lag
+            (chartoffset - chartoffset_lag)/60
           else null
         end as ventduration
 
@@ -56,8 +56,8 @@ with vd0 as
             order by chartoffset
             )
             = 1 then 1
-          -- if patient has initiated oxygen therapy, and is not currently vented, start a newvent
-          when MechVent = 0 and OxygenTherapy = 1 then 1
+          -- TODO: define an oxygen therapy flag that for sure means they switchted from MV to oxygen
+          -- when MechVent = 0 and OxygenTherapy = 1 then 1
             -- if there is less than 8 hours between vent settings, we do not treat this as a new ventilation event
           when (chartoffset - chartoffset_lag) > 480 -- 8 hours
             then 1

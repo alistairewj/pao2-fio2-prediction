@@ -8,34 +8,59 @@ case
   when nursingchartcelltypecat = 'Invasive' then
     case
       when (nursingchartcelltypevallabel = 'PA' and nursingchartcelltypevalname = 'PA Systolic') then 1
-else 0 end
+    else 0 end
   when nursingchartcelltypecat = 'Other Vital Signs and Infusions' then
     case
-      when (nursingchartcelltypevallabel = 'Sputum Amount' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Richmond Agitation Sedation Scale (RASS)' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Pasero Opioid-Induced Sedation Scale (POSS)' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Minute Ventilation Total (L/min)' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Sputum Color' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'A1: Vent: Mode/Rate' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'VAP Prevention' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Sedation Level' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'A4: PEEP/PSV' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Sputum Consistency' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Vent Mode' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Minute Volume' and nursingchartcelltypevalname = 'Value') then 1
       when (nursingchartcelltypevallabel = 'Sputum Characteristics' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Oral Care' and nursingchartcelltypevalname = 'Value') then 1
-      when (nursingchartcelltypevallabel = 'Peak Airway Pressure' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Minute Ventilation Total (L/min)' and nursingchartcelltypevalname = 'Value') then 1
       when (nursingchartcelltypevallabel = 'RASS' and nursingchartcelltypevalname = 'Value') then 1
-else 0 end
+      when (nursingchartcelltypevallabel = 'Peak Airway Pressure' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Pasero Opioid-Induced Sedation Scale (POSS)' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Vent Mode' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Sputum Amount' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Sputum Color' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Sputum Consistency' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'A4: PEEP/PSV' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'RLL Anterior' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Richmond Agitation Sedation Scale (RASS)' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Oral Care' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Weaning Start Time' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Plateau Pressure' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Tidal Volume Set' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Mode of Delivery' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'RASS Sedation Scale' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'BMI Ranking' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Mechanically Ventilated (Nutrition)' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Weaning Mode' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Ventilator Rate Set' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Apnea (secs)' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Vt exhaled' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Plateau Pressure (cm H2O)' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'SBT Method' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'RASS: Richmond Agitation-Sedation Scale' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'A1: Vent: Mode/Rate' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'RASS Assessment' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Sedation Level' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Minute Volume' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'PEEP Low Alarm' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Resp Rate Low Alarm' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Resp Rate High Alarm' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'HOB> 30 Degrees' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'VAP Prevention' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Ventilator Rate Total' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Daily Assessment of Readiness to Wean' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Peak Inspiratory Pressure' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'RASS Score' and nursingchartcelltypevalname = 'Value') then 1
+      when (nursingchartcelltypevallabel = 'Trigger/Sensitivity' and nursingchartcelltypevalname = 'Value') then 1
+    else 0 end
   when nursingchartcelltypecat = 'Vital Signs' then
     case
       when (nursingchartcelltypevallabel = 'End Tidal CO2' and nursingchartcelltypevalname = 'End Tidal CO2') then 1
-else 0 end
+    else 0 end
   when nursingchartcelltypecat = 'Vital Signs and Infusions' then
     case
-      when (nursingchartcelltypevallabel = 'HOB > 30°' and nursingchartcelltypevalname = 'HOB > 30°') then 1
       when (nursingchartcelltypevallabel = 'Oral Care' and nursingchartcelltypevalname = 'Oral Care') then 1
+      when (nursingchartcelltypevallabel = 'HOB > 30°' and nursingchartcelltypevalname = 'HOB > 30°') then 1
   else 0 end
 else 0 end) as MechVent
     -- oxygen therapy
@@ -44,16 +69,18 @@ case
   when nursingchartcelltypecat = 'Invasive' then
     case
       when (nursingchartcelltypevallabel = 'O2 Admin Device' and nursingchartcelltypevalname = 'O2 Admin Device') then 1
-else 0 end
+    else 0 end
   when nursingchartcelltypecat = 'Other Vital Signs and Infusions' then
     case
       when (nursingchartcelltypevallabel = 'O2 Device' and nursingchartcelltypevalname = 'Value') then 1
-else 0 end
+      when (nursingchartcelltypevallabel = 'Treatment (Inhaler)' and nursingchartcelltypevalname = 'Value') then 1
+    else 0 end
   when nursingchartcelltypecat = 'Vital Signs' then
     case
       when (nursingchartcelltypevallabel = 'O2 Admin Device' and nursingchartcelltypevalname = 'O2 Admin Device') then 1
       when (nursingchartcelltypevallabel = 'O2 L/%' and nursingchartcelltypevalname = 'O2 L/%') then 1
   else 0 end
+
 else 0 end) as OxygenTherapy
   , 0 as Extubated
 
@@ -69,6 +96,7 @@ select
 case
   when respcharttypecat = 'respFlowCareData' then
     case
+      when respchartvaluelabel ~* '(Site-Airway|Cuff Pressure-Airway|Airway Type-Airway|Size-Airway)( [0-9]+/[0-9]+/[0-9][0-9])?( [0-9][0-9][0-9][0-9])?[ ]+(oral;endotracheal tube|oral|endotracheal tube|tracheostomy)([A-z0-9;,. -]*)' then 1
       when (respchartvaluelabel = 'post bs') then 1
       when (respchartvaluelabel = 'INO') then 1
       when (respchartvaluelabel = 'Wake up assessment status') then 1
@@ -302,7 +330,7 @@ case
       when (respchartvaluelabel = 'Post BS') then 1
       when (respchartvaluelabel = 'Rapid Shallow Breathing Index') then 1
       when (respchartvaluelabel = 'Suctioned per') then 1
-else 0 end
+    else 0 end
   when respcharttypecat = 'respFlowPtVentData' then
     case
       when (respchartvaluelabel = 'Post BS') then 1
@@ -389,7 +417,7 @@ else 0 end
       when (respchartvaluelabel = 'pre HR') then 1
       when (respchartvaluelabel = 'E. Sens. %') then 1
       when (respchartvaluelabel = 'HR Pre') then 1
-else 0 end
+    else 0 end
   when respcharttypecat = 'respFlowSettings' then
     case
       when (respchartvaluelabel = 'TC/MV') then 1
@@ -470,14 +498,14 @@ case
       when (respchartvaluelabel = 'Oxygen Delivery Method') then 1
       when (respchartvaluelabel = 'Oxygen Delivery Status') then 1
       when (respchartvaluelabel = 'RETIRED O2 Device') then 1
-else 0 end
+    else 0 end
   when respcharttypecat = 'respFlowPtVentData' then
     case
       when (respchartvaluelabel = 'Mask Size') then 1
       when (respchartvaluelabel = 'MASK') then 1
       when (respchartvaluelabel = 'SaO2') then 1
       when (respchartvaluelabel = 'Dyspnea Assessment') then 1
-else 0 end
+    else 0 end
   when respcharttypecat = 'respFlowSettings' then
     case
       when (respchartvaluelabel = 'LPM O2') then 1
