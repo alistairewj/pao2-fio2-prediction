@@ -240,6 +240,254 @@ select
     WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Tube Size-ETT' THEN 'Tube Size-ETT'
     WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Type-ETT' THEN 'Type-ETT'
 
+
+    -- **************** **************** ****************
+    -- **************** PRE-PROCESS DATA ****************
+    -- **************** **************** ****************
+
+  , case
+    -- fio2
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'FIO2 (%)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'FiO2' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'FiO2' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'O2 Percentage' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Set Fraction of Inspired Oxygen (FIO2)' THEN respchartvalue
+
+    -- tidal volume // Vt
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'A1: High Exhaled Vt' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Setting Spont Exp Vt' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Pt/Vent InspiratorTV' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Exhaled TV (machine)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Exhaled TV (patient)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Exhaled Vt' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Set Vt (Drager)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Set Vt (Servo,LTV)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Spont TV' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'TV/kg IBW' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Tidal Volume (set)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Tidal Volume Observed (VT)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Tidal Volume, Delivered' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Tidal Volume, Spontaneous' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Vt Spontaneous (mL)' THEN respchartvalue
+
+    -- extubation
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Extubation Date' THEN respchartvalue
+
+    -- respiratory rate
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Setting Set RR' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Setting Set RR' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Pt/Vent Spont Rate' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Backup RR (Set)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'RR (patient)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'RR Spont' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Resp Rate Total' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Spontaneous Respiratory Rate' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Total RR' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'VS RESP RATE' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Vent Rate' THEN respchartvalue
+
+    -- triggers
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Flow Sensitivity' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Flowtrigger' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Pressure to Trigger PS' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Trigger' THEN respchartvalue
+
+    -- end tidal co2
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Pt/Vent ETCO2' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Pt/Vent ETCO2_' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'ETCO2' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'End Tidal CO2 (mmHg)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'End Tidal CO2 Status' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'EtCO2' THEN respchartvalue
+
+    -- weight / ideal body weight
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Pt/Vent IBW in Kg' THEN respchartvalue
+
+    -- oxygen saturation
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Pt/Vent SpO2' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'SaO2' THEN respchartvalue
+
+    -- oxygen flow
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'LPM O2' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'O2 Liter Flow (1L or More)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Oxygen Flow Rate' THEN respchartvalue
+
+    -- minute ventilation
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Pt/Vent MinuteVentil' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Exhaled MV' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'MVe' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Minute Ventilation Set(L/min)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Minute Volume, Spontaneous' THEN respchartvalue
+
+    -- mean airway pressure
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Mean Airway Pressure' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Mean Airway Pressure' THEN respchartvalue
+
+    -- other pressures
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Peak Insp. Pressure' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Peak Pressure' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Plateau Pressure' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Plateau Pressure' THEN respchartvalue
+
+
+    -- ventilator waveform settings
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Mechanical Ventilation Slope' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Mechanical Ventilator Compliance' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Mechanical Ventilator High Tidal Volume Alarm' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Mechanical Ventilator ID Number' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Mechanical Ventilator Mode' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Mechanical Ventilator Resistance' THEN respchartvalue
+
+    -- pao2/fio2
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = '3. PaO2/FiO2 Ratio' THEN respchartvalue
+
+    -- peep
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'Auto PEEP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'PEEP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'PEEP/CPAP' THEN respchartvalue
+
+    -- I:E // IPAP // EPAP
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Backup IInsp Time (sec)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'B1: IPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'IPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'IPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'IPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'B2: EPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'EPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'EPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'EPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'I:E Ratio' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'PD I:E RATIO' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'T Peep' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'epap' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'ipap' THEN respchartvalue
+
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Adult Con Setting Set I:E' THEN respchartvalue
+    -- WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = '5. ARDS Eval (M or DNM)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'A2: External Room Alarm' THEN respchartvalue
+    -- head of bed
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'HOB Elevated 30-45 Degrees at All Times' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Head of Bed Elevated' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Head of Bed Elevation' THEN respchartvalue
+
+    -- inspiration
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Insp Cycle Off (%)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Insp Flow (l/min)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Insp Time (%)' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Inspiratory Flow Rate' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Inspiratory Pressure, Set' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Inspiratory Time' THEN respchartvalue
+
+    -- vent mode
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Bipap Delivery Mode' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'CPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Mode of Ventilation' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Pressure Control' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Pressure Support' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Respiratory Device' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Sigh' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Ventilator Support Mode' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Ventilator Type' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Volume Guarantee' THEN respchartvalue
+
+    -- oxygen delivery device
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'O2 Admin Device' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'O2 Admin Device 2' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'O2 Device' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Oxygen Delivery Comments' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Oxygen Delivery Method' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Oxygen Delivery Status' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'RETIRED O2 Device' THEN respchartvalue
+
+    -- NIV
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Pt/Vent Mask Type' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Pt/Vent SpO2_5' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Pt/Vent Spont_Rate' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Pt/Vent Spont_TidalV' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Setting Circuit T_5' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Setting EPAP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Setting Heliox_5' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Setting Leak_' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Setting Set_RR' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Setting Spont Exp Vt_5' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'NIV Setting Total RR_5' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Non Invasive Ventilation Comments' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Non Invasive Ventilator Type' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Non-invasive Ventilation Mode' THEN respchartvalue
+
+    -- RSBI
+    WHEN respcharttypecat = 'respFlowPtVentData' AND respchartvaluelabel = 'RSBI' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Sedation Scoring Ventilation Depth' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Sedation Scoring Ventilation Depth' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Total RSBI' THEN respchartvalue
+
+    -- SBT // weaning
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Reason SBT Terminated' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'SBT Method' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Sedation Wean' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Spontaneous Breathing Trial With Pressure Support' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Assessment Criteria Collaboration' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Minute Volume' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Negative Inspiratory Force' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Performed' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Respiratory Rate' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning SBT Readiness Add''l Info' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning SBT Readiness Criteria' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Start Time' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Trials Additional Comments' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Weaning Vital Capacity' THEN respchartvalue
+
+    -- sedation // needs to be classified properly
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'WUA Patient Response/RASS Score' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Wake up assessment interventions' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Wake up assessment outcome' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Wake up assessment performed' THEN respchartvalue
+
+    -- ??? not sure
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Measured Ve' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'PS' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'PS above PEEP' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'PULSE OX RESULTS VT' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowSettings' AND respchartvaluelabel = 'Peak Flow' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Position at lip' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Postion at Lip' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Rise' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Rise T' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'SET INSP TIME' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Secured by' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Sedation outcome' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Trapped Volume' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Treatments' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Type of Treatment' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Unable to Obtain PEEPi and Vtrap' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Vti' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'f Total' THEN respchartvalue
+
+    -- ETT info
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ET Tube Repositioned' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Insertion Date' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Insertion Time' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Insertion date' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Insertion date' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Insertion time' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Peptic Ulcer Prophylaxis' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Rotation' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'ETT Sedation Vacation' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Endotracheal Position at Lip' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Endotracheal Tube Moved to' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Endotracheal Tube Placement' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Endotracheal Tube Placement Checked' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Secured at-ETT' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Secured at-ETT' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Tube Size-ETT' THEN respchartvalue
+    WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Type-ETT' THEN respchartvalue
+
+
+
+
+
+
+
     -- WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'AIRWAY TEMPERATURE' THEN 'AIRWAY TEMPERATURE'
     -- WHEN respcharttypecat = 'respFlowCareData' AND respchartvaluelabel = 'Additional ET Tube Comments' THEN 'Additional ET Tube Comments'
 
