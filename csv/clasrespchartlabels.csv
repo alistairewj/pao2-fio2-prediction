@@ -1,0 +1,196 @@
+"respchartvaluelabel","group","respcharttypecat","new_label","addition","multiplication","n_obs","n_pat","n_obs_per_pat","n_distinct_obs","string_mode","numeric_obs_percent","value_p05","value_p50","value_p95"
+"3. PaO2/FiO2 Ratio","pao2/fio2","respFlowSettings",NA,NA,NA,2001,236,8.4788,261,"no abg",0.4983,74,188,445
+"A1: High Exhaled Vt","tidal volume // Vt","respFlowPtVentData",NA,NA,NA,13921,876,15.8916,76,"800",0.9389,600,800,1000
+"A2: External Room Alarm","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,39066,1450,26.9421,97,"ON",4e-04,36.3,700,1000
+"Adult Con Pt/Vent ETCO2","end tidal co2","respFlowCareData",NA,NA,NA,5437,217,25.0553,56,"30",1,18,30,44
+"Adult Con Pt/Vent ETCO2_","end tidal co2","respFlowCareData",NA,NA,NA,1401,227,6.1718,61,"30",0.995,18,30,45
+"Adult Con Pt/Vent IBW in Kg","weight / ideal body weight","respFlowCareData",NA,NA,NA,30066,399,75.3534,91,"73",0.9912,47.3,68,82.2
+"Adult Con Pt/Vent InspiratorTV","tidal volume // Vt","respFlowCareData",NA,NA,NA,55100,795,69.3082,1021,"502",0.9999,352,501,700
+"Adult Con Pt/Vent MinuteVentil","minute ventilation","respFlowCareData",NA,NA,NA,55459,795,69.7597,446,"8.1",0.9994,5.7,9.2,14.4
+"Adult Con Pt/Vent SpO2","oxygen saturation","respFlowCareData",NA,NA,NA,14058,821,17.123,74,"100",0.9966,94,99,100
+"Adult Con Pt/Vent Spont Rate","respiratory rate","respFlowCareData",NA,NA,NA,55289,797,69.3714,126,"0",0.9995,0,3,25
+"Adult Con Setting Set I:E","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,12994,618,21.0259,126,"1:02",0.013,0.9,1,1.65
+"Adult Con Setting Set RR","respiratory rate","respFlowCareData",NA,NA,NA,64578,801,80.6217,41,"16",1,8,16,25
+"Adult Con Setting Set RR","respiratory rate","respFlowCareData",NA,NA,NA,64578,801,80.6217,41,"16",1,8,16,25
+"Adult Con Setting Spont Exp Vt","tidal volume // Vt","respFlowCareData",NA,NA,NA,5481,623,8.7978,772,"420",0.996,300,482,770
+"Auto PEEP","peep","respFlowPtVentData",NA,NA,NA,44497,4429,10.0467,376,"0",0.8635,0,0.1,10.6
+"B1: IPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,2480,401,6.1845,23,"12",1,10,14,20
+"B2: EPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,2600,410,6.3415,19,"5",1,5,6,10
+"Backup IInsp Time (sec)","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,3849,438,8.7877,6,"0.9",1,0.9,0.9,1
+"Backup RR (Set)","respiratory rate","respFlowCareData",NA,NA,NA,3859,438,8.8105,11,"15",1,12,15,15
+"Bipap Delivery Mode","vent mode","respFlowCareData",NA,NA,NA,2358,264,8.9318,5,"Facial BiPAP mask",0,NA,NA,NA
+"CPAP","vent mode","respFlowSettings",NA,NA,NA,26565,3242,8.194,84,"5",0.9413,5,5,12
+"End Tidal CO2 (mmHg)","end tidal co2","respFlowCareData",NA,NA,NA,767,95,8.0737,57,"30",1,17,33,48
+"End Tidal CO2 Status","end tidal co2","respFlowCareData",NA,NA,NA,4175,144,28.9931,6,"Not applicable",7e-04,2,2,2
+"Endotracheal Position at Lip","ETT info","respFlowCareData",NA,NA,NA,13418,320,41.9313,16,"23",1,20,23,26
+"Endotracheal Tube Moved to","ETT info","respFlowCareData",NA,NA,NA,4088,189,21.6296,3,"Center of mouth",0,NA,NA,NA
+"Endotracheal Tube Placement","ETT info","respFlowCareData",NA,NA,NA,20412,661,30.8805,9,"Oral Endotracheal",0,NA,NA,NA
+"Endotracheal Tube Placement Checked","ETT info","respFlowCareData",NA,NA,NA,5090,335,15.194,1,"Y",0,NA,NA,NA
+"epap","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,163,60,2.7167,11,"5",1,5,6,12
+"EPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,439,99,4.4343,10,"5",1,5,7,12
+"EPAP","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,874,242,3.6116,14,"5",1,5,5,10
+"EPAP","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,4383,372,11.7823,16,"5",1,5,5,10
+"EPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,439,99,4.4343,10,"5",1,5,7,12
+"EPAP","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,874,242,3.6116,14,"5",1,5,5,10
+"EPAP","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,4383,372,11.7823,16,"5",1,5,5,10
+"EPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,439,99,4.4343,10,"5",1,5,7,12
+"EPAP","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,874,242,3.6116,14,"5",1,5,5,10
+"EPAP","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,4383,372,11.7823,16,"5",1,5,5,10
+"ET Tube Repositioned","ETT info","respFlowCareData",NA,NA,NA,2793,71,39.338,3,"N",0,NA,NA,NA
+"EtCO2","end tidal co2","respFlowPtVentData",NA,NA,NA,1501,55,27.2909,72,"35",0.9714,23,33,47
+"ETCO2","end tidal co2","respFlowPtVentData",NA,NA,NA,3427,116,29.5431,72,"29",0.9901,23,32,47
+"ETT Insertion date","ETT info","respFlowCareData",NA,NA,NA,1864,72,25.8889,74,"20140202",0.9989,20140120,20140602,20151113
+"ETT Insertion date","ETT info","respFlowCareData",NA,NA,NA,1864,72,25.8889,74,"20140202",0.9989,20140120,20140602,20151113
+"ETT Insertion Date","ETT info","respFlowCareData",NA,NA,NA,1053,68,15.4853,68,"20150623",1,20140120,20140619,20151113
+"ETT Insertion time","ETT info","respFlowCareData",NA,NA,NA,1731,65,26.6308,64,"2230",0.9994,45,1500,2230
+"ETT Insertion Time","ETT info","respFlowCareData",NA,NA,NA,929,60,15.4833,54,"2000",1,45,1600,2230
+"ETT Peptic Ulcer Prophylaxis","ETT info","respFlowCareData",NA,NA,NA,4612,299,15.4247,2,"Y",0,NA,NA,NA
+"ETT Rotation","ETT info","respFlowCareData",NA,NA,NA,45371,1450,31.2903,124,"Right",1e-04,7,37,2300
+"ETT Sedation Vacation","ETT info","respFlowCareData",NA,NA,NA,3368,231,14.5801,2,"N",0,NA,NA,NA
+"Exhaled MV","minute ventilation","respFlowPtVentData",NA,NA,NA,579253,24715,23.4373,3197,"10",0.9997,5.57,9.7,19.2
+"Exhaled TV (machine)","tidal volume // Vt","respFlowPtVentData",NA,NA,NA,479007,16581,28.8889,3417,"500",0.9999,297,488,723
+"Exhaled TV (patient)","tidal volume // Vt","respFlowPtVentData",NA,NA,NA,424765,23175,18.3286,3517,"500",0.9999,232,500,758
+"Exhaled Vt","tidal volume // Vt","respFlowCareData",NA,NA,NA,22019,1439,15.3016,765,"501",1,389,524,706
+"Extubation Date","extubation","respFlowCareData",NA,NA,NA,318,100,3.18,94,"20150505",1,20141217,20150603,20151213
+"f Total","??? not sure","respFlowCareData",NA,NA,NA,74287,602,123.4003,71,"16",1,12,20,35
+"FiO2","fio2","respFlowSettings","FiO2",NA,NA,2935349,74711,39.2894,942,"40",0.9965,25,40,100
+"FiO2","fio2","respFlowCareData","FiO2",NA,NA,149269,1285,116.1626,63,"40",1,30,45,100
+"FiO2","fio2","respFlowSettings","FiO2",NA,NA,2935349,74711,39.2894,942,"40",0.9965,25,40,100
+"FiO2","fio2","respFlowCareData","FiO2",NA,NA,149269,1285,116.1626,63,"40",1,30,45,100
+"FIO2 (%)","fio2","respFlowCareData","FiO2",NA,NA,144478,2057,70.2372,86,"40",1,30,40,100
+"Flow Sensitivity","triggers","respFlowSettings",NA,NA,NA,263729,9411,28.0235,173,"3",0.9953,2,3,5
+"Flowtrigger","triggers","respFlowCareData",NA,NA,NA,5847,346,16.8988,2,"1",1,1,1,1
+"Head of Bed Elevated","head of bed","respFlowCareData",NA,NA,NA,20516,1646,12.4642,3,"Yes",0,NA,NA,NA
+"Head of Bed Elevation","head of bed","respFlowCareData",NA,NA,NA,254591,17546,14.5099,4,"Yes",0,NA,NA,NA
+"HOB Elevated 30-45 Degrees at All Times","head of bed","respFlowCareData",NA,NA,NA,4866,322,15.1118,2,"Y",0,NA,NA,NA
+"I:E Ratio","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,409935,17855,22.9591,2416,"1:02",0.056,0.3,1.9,4.6
+"Insp Cycle Off (%)","inspiration","respFlowCareData",NA,NA,NA,6914,485,14.2557,10,"30",1,30,30,30
+"Insp Flow (l/min)","inspiration","respFlowCareData",NA,NA,NA,7120,640,11.125,117,"60",1,27,40,80
+"Insp Time (%)","inspiration","respFlowCareData",NA,NA,NA,1287,197,6.533,29,"0.15",1,0.15,0.15,1.15
+"Inspiratory Flow Rate","inspiration","respFlowCareData",NA,NA,NA,11434,381,30.0105,38,"60",1,50,60,80
+"Inspiratory Pressure, Set","inspiration","respFlowCareData",NA,NA,NA,18355,581,31.5921,42,"0",1,0,0,25
+"Inspiratory Time","inspiration","respFlowSettings",NA,NA,NA,406510,22352,18.1867,459,"1",0.996,0.15,1,1.4
+"ipap","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,166,61,2.7213,13,"15",1,10,15,20
+"IPAP","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,4169,345,12.0841,21,"10",1,10,12,20
+"IPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,423,100,4.23,15,"15",1,8,14,20
+"IPAP","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,877,242,3.624,20,"15",1,7,14,20
+"IPAP","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,4169,345,12.0841,21,"10",1,10,12,20
+"IPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,423,100,4.23,15,"15",1,8,14,20
+"IPAP","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,877,242,3.624,20,"15",1,7,14,20
+"IPAP","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,4169,345,12.0841,21,"10",1,10,12,20
+"IPAP","I:E // IPAP // EPAP","respFlowPtVentData",NA,NA,NA,423,100,4.23,15,"15",1,8,14,20
+"IPAP","I:E // IPAP // EPAP","respFlowSettings",NA,NA,NA,877,242,3.624,20,"15",1,7,14,20
+"LPM O2","oxygen flow","respFlowSettings",NA,NA,NA,1021020,54651,18.6825,303,"2",0.9974,1,3,40
+"Mean Airway Pressure","mean airway pressure","respFlowCareData",NA,NA,NA,24916,1498,16.6328,99,"9",1,7,10,19
+"Mean Airway Pressure","mean airway pressure","respFlowPtVentData",NA,NA,NA,671752,27290,24.6153,681,"10",1,7,11,20
+"Mean Airway Pressure","mean airway pressure","respFlowCareData",NA,NA,NA,24916,1498,16.6328,99,"9",1,7,10,19
+"Mean Airway Pressure","mean airway pressure","respFlowPtVentData",NA,NA,NA,671752,27290,24.6153,681,"10",1,7,11,20
+"Measured Ve","??? not sure","respFlowCareData",NA,NA,NA,25376,1509,16.8164,301,"9.2",1,6.3,10.2,16.7
+"Mechanical Ventilation Slope","ventilator waveform settings","respFlowCareData",NA,NA,NA,7668,367,20.8937,12,"0.2",1,0.2,0.2,0.2
+"Mechanical Ventilator Compliance","ventilator waveform settings","respFlowCareData",NA,NA,NA,4242,210,20.2,551,"51",1,14,37.6,93
+"Mechanical Ventilator High Tidal Volume Alarm","ventilator waveform settings","respFlowCareData",NA,NA,NA,6830,535,12.7664,38,"1000",1,750,1000,1300
+"Mechanical Ventilator ID Number","ventilator waveform settings","respFlowCareData",NA,NA,NA,10844,540,20.0815,205,"DVT 0105",0,NA,NA,NA
+"Mechanical Ventilator Mode","ventilator waveform settings","respFlowCareData",NA,NA,NA,4708,332,14.1807,9,"AC/CMV",0,NA,NA,NA
+"Mechanical Ventilator Resistance","ventilator waveform settings","respFlowCareData",NA,NA,NA,4255,210,20.2619,239,"21",1,4.1,15,31
+"Minute Ventilation Set(L/min)","minute ventilation","respFlowCareData",NA,NA,NA,13844,631,21.9398,135,"8",1,4,8,13.2
+"Minute Volume, Spontaneous","minute ventilation","respFlowCareData",NA,NA,NA,3537,330,10.7182,218,"0",1,0,6.1,15.1
+"Mode of Ventilation","vent mode","respFlowSettings",NA,NA,NA,1277253,46194,27.6498,2274,"PRVC",0.0538,0.44,430,600
+"MVe","minute ventilation","respFlowCareData",NA,NA,NA,20686,868,23.8318,323,"8",1,5.7,9.4,16.1
+"NIV Pt/Vent Mask Type","NIV","respFlowCareData",NA,NA,NA,3152,380,8.2947,136,"FFM",0,NA,NA,NA
+"NIV Pt/Vent SpO2_5","NIV","respFlowCareData",NA,NA,NA,2215,402,5.51,48,"100",0.9856,92,98,100
+"NIV Pt/Vent Spont_Rate","NIV","respFlowCareData",NA,NA,NA,5005,340,14.7206,92,"20",0.9996,12,21,34
+"NIV Pt/Vent Spont_TidalV","NIV","respFlowCareData",NA,NA,NA,5083,336,15.128,901,"450",0.9998,292,521,922
+"NIV Setting Circuit T_5","NIV","respFlowCareData",NA,NA,NA,104,66,1.5758,26,"NO",0.3173,29.9,33.3,34.9
+"NIV Setting EPAP","NIV","respFlowCareData",NA,NA,NA,8698,404,21.5297,18,"5",0.9979,5,5,10
+"NIV Setting Heliox_5","NIV","respFlowCareData",NA,NA,NA,323,78,4.141,12,"NO",0.0372,0,0,29
+"NIV Setting Leak_","NIV","respFlowCareData",NA,NA,NA,2121,394,5.3832,90,"0",0.9991,1,24,55
+"NIV Setting Set_RR","NIV","respFlowCareData",NA,NA,NA,3110,350,8.8857,18,"4",0.9386,4,4,5
+"NIV Setting Spont Exp Vt_5","NIV","respFlowCareData",NA,NA,NA,2161,391,5.5269,663,"520",1,305,520,867
+"NIV Setting Total RR_5","NIV","respFlowCareData",NA,NA,NA,2169,395,5.4911,47,"22",1,12,21,34
+"Non-invasive Ventilation Mode","NIV","respFlowCareData",NA,NA,NA,4404,282,15.617,7,"S/T",0,NA,NA,NA
+"Non Invasive Ventilation Comments","NIV","respFlowCareData",NA,NA,NA,3313,273,12.1355,1898,"BiPAP on standby",0,NA,NA,NA
+"Non Invasive Ventilator Type","NIV","respFlowCareData",NA,NA,NA,4685,272,17.2243,161,"3",0.5861,3,3,3
+"O2 Admin Device","oxygen delivery device","respFlowSettings",NA,NA,NA,2765778,73626,37.5652,2411,"Nasal cannula",0.0068,840,840,840
+"O2 Admin Device 2","oxygen delivery device","respFlowCareData",NA,NA,NA,64725,1373,47.1413,41,"Ventilator",0,NA,NA,NA
+"O2 Device","oxygen delivery device","respFlowCareData",NA,NA,NA,482085,6254,77.0843,21,"None (Room air)",0,NA,NA,NA
+"O2 Liter Flow (1L or More)","oxygen flow","respFlowCareData",NA,NA,NA,165014,4617,35.7405,34,"2L/min",0,NA,NA,NA
+"O2 Percentage","fio2","respFlowCareData",NA,NA,NA,116672,1831,63.7204,82,"40",1,25,40,100
+"Oxygen Delivery Comments","oxygen delivery device","respFlowCareData",NA,NA,NA,430,251,1.7131,360,"per rn",0,NA,NA,NA
+"Oxygen Delivery Method","oxygen delivery device","respFlowCareData",NA,NA,NA,46062,920,50.0674,27,"Nasal cannula",0.0062,3,7,10
+"Oxygen Delivery Status","oxygen delivery device","respFlowCareData",NA,NA,NA,7329,847,8.6529,6,"In Place",0,NA,NA,NA
+"Oxygen Flow Rate","oxygen flow","respFlowCareData",NA,NA,NA,26711,1036,25.7828,37,"2",1,1,2,10
+"PD I:E RATIO","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,4172,122,34.1967,103,"3.8",1,1.1,2.4,4.8
+"Peak Flow","??? not sure","respFlowSettings",NA,NA,NA,136886,8058,16.9876,649,"60",0.9414,0,60,80
+"Peak Insp. Pressure","other pressures","respFlowPtVentData",NA,NA,NA,662048,22484,29.4453,808,"21",0.9997,13,23,38
+"Peak Pressure","other pressures","respFlowCareData",NA,NA,NA,1866,72,25.9167,58,"27",0.9989,15,25,37
+"PEEP","peep","respFlowSettings",NA,NA,NA,1481709,46028,32.1915,469,"5",0.9886,5,5,12
+"PEEP/CPAP","peep","respFlowSettings",NA,NA,NA,126638,5407,23.4211,107,"5",1,5,5,12
+"Plateau Pressure","other pressures","respFlowCareData",NA,NA,NA,18943,1307,14.4935,57,"18",1,13,20,31
+"Plateau Pressure","other pressures","respFlowPtVentData",NA,NA,NA,361511,23758,15.2164,856,"20",0.9777,10,20,32
+"Plateau Pressure","other pressures","respFlowCareData",NA,NA,NA,18943,1307,14.4935,57,"18",1,13,20,31
+"Plateau Pressure","other pressures","respFlowPtVentData",NA,NA,NA,361511,23758,15.2164,856,"20",0.9777,10,20,32
+"Position at lip","??? not sure","respFlowCareData",NA,NA,NA,1828,70,26.1143,12,"24",0.9989,21,24,26
+"Postion at Lip","??? not sure","respFlowCareData",NA,NA,NA,1041,67,15.5373,10,"24",1,21,24,26
+"Pressure Control","vent mode","respFlowSettings",NA,NA,NA,83593,2926,28.569,151,"20",0.9958,0,18,30
+"Pressure Support","vent mode","respFlowSettings",NA,NA,NA,375468,24248,15.4845,156,"10",0.9885,0,10,18
+"Pressure to Trigger PS","triggers","respFlowSettings",NA,NA,NA,71569,3318,21.5699,75,"2",1,-2,2,3
+"PS","??? not sure","respFlowCareData",NA,NA,NA,8746,458,19.0961,24,"10",1,5,10,15
+"PS above PEEP","??? not sure","respFlowCareData",NA,NA,NA,7040,486,14.4856,22,"10",1,7,10,18
+"PULSE OX RESULTS VT","??? not sure","respFlowCareData",NA,NA,NA,4164,119,34.9916,44,"100",0.9981,92,99,100
+"Reason SBT Terminated","SBT // weaning","respFlowCareData",NA,NA,NA,541,276,1.9601,28,"RR > 35 breaths/min or Frequency/TV ratio >105",0,NA,NA,NA
+"Resp Rate Total","respiratory rate","respFlowCareData",NA,NA,NA,25003,1498,16.6909,178,"20",1,13,20,33
+"Respiratory Device","vent mode","respFlowCareData",NA,NA,NA,8302,392,21.1786,7,"2",1,1,2,6
+"RETIRED O2 Device","oxygen delivery device","respFlowCareData",NA,NA,NA,1403,70,20.0429,14,"Ventilator",0,NA,NA,NA
+"Rise","??? not sure","respFlowCareData",NA,NA,NA,1869,248,7.5363,4,"2",1,2,2,2
+"Rise T","??? not sure","respFlowCareData",NA,NA,NA,2054,313,6.5623,23,"0.4",1,0.2,0.4,4
+"RR (patient)","respiratory rate","respFlowPtVentData",NA,NA,NA,2403325,62946,38.1807,252,"18",1,11,19,30
+"RR Spont","respiratory rate","respFlowCareData",NA,NA,NA,23767,647,36.7342,71,"0",1,0,6,28
+"RSBI","RSBI","respFlowPtVentData",NA,NA,NA,88,59,1.4915,56,"68",1,22,55,127
+"SaO2","oxygen saturation","respFlowPtVentData",NA,NA,NA,395063,32401,12.1929,816,"100",0.9641,92,97,100
+"SBT Method","SBT // weaning","respFlowCareData",NA,NA,NA,1435,632,2.2706,4,"CPAP 5 cm H20 and PS 5 cm H20",0,NA,NA,NA
+"Secured by","??? not sure","respFlowCareData",NA,NA,NA,1870,71,26.338,3,"Adjustable ETT Holder",0,NA,NA,NA
+"Sedation outcome","??? not sure","respFlowCareData",NA,NA,NA,1058,412,2.568,16,"Resumed medications at 100%",0,NA,NA,NA
+"Sedation Scoring Ventilation Depth","RSBI","respFlowCareData",NA,NA,NA,1253,123,10.187,5,"Normal",0,NA,NA,NA
+"Sedation Scoring Ventilation Depth","RSBI","respFlowCareData",NA,NA,NA,1253,123,10.187,5,"Normal",0,NA,NA,NA
+"Sedation Wean","SBT // weaning","respFlowCareData",NA,NA,NA,1560,143,10.9091,2,"N",0,NA,NA,NA
+"Set Fraction of Inspired Oxygen (FIO2)","fio2","respFlowCareData",NA,NA,NA,7579,353,21.4703,26,"30",1,21,35,100
+"SET INSP TIME","??? not sure","respFlowCareData",NA,NA,NA,2766,107,25.8505,7,"0",1,0,0,1
+"Set Vt (Drager)","tidal volume // Vt","respFlowCareData","Tidal Volume, Set",NA,1000,17069,289,59.0623,60,"0.5",1,0.3,0.47,0.65
+"Set Vt (Servo,LTV)","tidal volume // Vt","respFlowCareData","Tidal Volume, Set",NA,NA,49825,343,145.2624,61,"500",1,320,450,600
+"Sigh","vent mode","respFlowCareData",NA,NA,NA,4853,336,14.4435,2,"2",1,2,2,2
+"Spont TV","tidal volume // Vt","respFlowCareData",NA,NA,NA,4725,1007,4.6922,752,"500",1,313,505,796
+"Spontaneous Breathing Trial With Pressure Support","SBT // weaning","respFlowCareData",NA,NA,NA,887,96,9.2396,2,"N",0,NA,NA,NA
+"Spontaneous Respiratory Rate","respiratory rate","respFlowCareData",NA,NA,NA,1628,68,23.9412,43,"0",0.9988,0,4,25
+"T Peep","I:E // IPAP // EPAP","respFlowCareData",NA,NA,NA,612,111,5.5135,37,"-132",1,-132,8,33
+"Tidal Volume (set)","tidal volume // Vt","respFlowSettings",NA,NA,NA,1035052,37459,27.6316,1137,"500",0.9995,350,500,600
+"Tidal Volume Observed (VT)","tidal volume // Vt","respFlowCareData",NA,NA,NA,50564,2656,19.0377,950,"420",1,310,450,640
+"Tidal Volume, Delivered","tidal volume // Vt","respFlowCareData",NA,NA,NA,27779,995,27.9186,915,"520",1,327,514,730
+"Tidal Volume, Spontaneous","tidal volume // Vt","respFlowCareData",NA,NA,NA,406,141,2.8794,234,"450",1,233,454,760
+"Total RR","respiratory rate","respFlowPtVentData",NA,NA,NA,1318179,35541,37.089,837,"18",0.9997,12,18,31
+"Total RSBI","RSBI","respFlowCareData",NA,NA,NA,7017,1179,5.9517,316,"41",1,14.69,56,154
+"Trapped Volume","??? not sure","respFlowCareData",NA,NA,NA,4980,267,18.6517,523,"0",1,0.004,0.072,0.37
+"Treatments","??? not sure","respFlowCareData",NA,NA,NA,158986,7027,22.625,1475,"given",0,37.1,37.1,1139
+"Trigger","triggers","respFlowCareData",NA,NA,NA,1830,70,26.1429,3,"Flow",0,NA,NA,NA
+"TV/kg IBW","tidal volume // Vt","respFlowSettings",NA,NA,NA,1063883,41672,25.5299,7230,NA,0.9625,5.6333,7.5622,10.989
+"Type of Treatment","??? not sure","respFlowCareData",NA,NA,NA,8316,392,21.2143,3,"Standard",0,NA,NA,NA
+"Unable to Obtain PEEPi and Vtrap","??? not sure","respFlowCareData",NA,NA,NA,1648,195,8.4513,1,"1",1,1,1,1
+"Vent Rate","respiratory rate","respFlowSettings",NA,NA,NA,1128376,39063,28.8861,285,"14",0.9998,10,16,28
+"Ventilator Support Mode","vent mode","respFlowCareData",NA,NA,NA,2838,72,39.4167,7,"CMV",0,NA,NA,NA
+"Ventilator Type","vent mode","respFlowCareData",NA,NA,NA,1715,67,25.597,4,"G5",0,NA,NA,NA
+"Volume Guarantee","vent mode","respFlowCareData",NA,NA,NA,2976,296,10.0541,2,"2",1,2,2,2
+"VS RESP RATE","respiratory rate","respFlowCareData",NA,NA,NA,4262,124,34.371,14,"12",1,0,14,20
+"Vt Spontaneous (mL)","tidal volume // Vt","respFlowCareData",NA,NA,NA,2078,253,8.2134,583,"0",1,220,476,776
+"Vti","??? not sure","respFlowCareData",NA,NA,NA,54837,638,85.9514,1283,"504",1,293,485,727
+"Wake up assessment interventions","sedation // needs to be classified properly","respFlowCareData",NA,NA,NA,1812,641,2.8268,6,"Sedation decreased 50%",0,NA,NA,NA
+"Wake up assessment outcome","sedation // needs to be classified properly","respFlowCareData",NA,NA,NA,661,214,3.0888,11,"Drips remain off",0,NA,NA,NA
+"Wake up assessment performed","sedation // needs to be classified properly","respFlowCareData",NA,NA,NA,1203,286,4.2063,2,"Yes",0,NA,NA,NA
+"Weaning Assessment Criteria Collaboration","SBT // weaning","respFlowCareData",NA,NA,NA,2691,191,14.089,2,"Y",0,NA,NA,NA
+"Weaning Minute Volume","SBT // weaning","respFlowCareData",NA,NA,NA,145,119,1.2185,73,"12",1,5,9.6,14.9
+"Weaning Negative Inspiratory Force","SBT // weaning","respFlowCareData",NA,NA,NA,258,109,2.367,67,"40",1,-50,-20,50
+"Weaning Performed","SBT // weaning","respFlowCareData",NA,NA,NA,770,209,3.6842,2,"Y",0,NA,NA,NA
+"Weaning Respiratory Rate","SBT // weaning","respFlowCareData",NA,NA,NA,515,340,1.5147,45,"20",1,13,22,38
+"Weaning SBT Readiness Criteria","SBT // weaning","respFlowCareData",NA,NA,NA,258,104,2.4808,7,"Not Met",0,NA,NA,NA
+"Weaning Start Time","SBT // weaning","respFlowCareData",NA,NA,NA,1626,673,2.416,167,"8000000",1,7220000,8070000,9200000
+"Weaning Trials Additional Comments","SBT // weaning","respFlowCareData",NA,NA,NA,249,89,2.7978,225,"SBT this AM",0,NA,NA,NA
+"Weaning Vital Capacity","SBT // weaning","respFlowCareData",NA,NA,NA,220,108,2.037,92,"1",1,0.4,1.2,2.8
+"WUA Patient Response/RASS Score","sedation // needs to be classified properly","respFlowCareData",NA,NA,NA,2112,675,3.1289,10,"0",1,-5,0,3
