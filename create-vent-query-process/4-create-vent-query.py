@@ -7,6 +7,9 @@ import getpass
 import os
 import socket
 
+# limit to a single hospital
+HOSPITAL = 458
+
 def conn_to_db():
     # connection info
     hostname=socket.gethostname()
@@ -109,33 +112,34 @@ if __name__ == '__main__':
     print('Dropping {} of {} rows which have not been classified.'.format(np.sum(idxNull), df_resp.shape[0]))
     df_resp = df_resp.loc[~idxNull, :]
 
+    # modify label to make it a valid column name
+    df_resp['new_label'] = df_resp['new_label'].map(lambda x: x.replace(' ','_').replace('(','_').replace(')','_'))
+    df_resp['new_label'] = df_resp['new_label'].map(lambda x: x.replace('/','_').replace('-','_').replace('\\','_'))
+    df_resp['new_label'] = df_resp['new_label'].map(lambda x: x.replace(':','_'))
+
     # sort df_resp by reclassification
     df_resp.sort_values('new_label', ascending=True, inplace=True)
 
     # create the query
     query = query_schema
-    query += "\nselect patientunitstayid, respchartoffset as chartoffset"
+    query += "\nselect rc.patientunitstayid, respchartoffset as chartoffset, respchartentryoffset as entryoffset"
     query += "\n-- case statement for creating a column with only one type of value"
 
     new_columns = df_resp['new_label'].unique()
 
     cols = ["respcharttypecat", "respchartvaluelabel"]
     value_col = "respchartvalue"
-    query += "\n, CASE"
+    query += "\n, max(CASE"
     for i, row in df_resp.iterrows():
         if i>0:
             if new_label != row['new_label']:
                 # it's a new concept
-                query += "\n  ELSE NULL END AS " + new_label.replace(' ','_')
+                query += "\n  ELSE NULL END) AS " + new_label.replace(' ','_')
                 # check if row is over
-                query += "\n, CASE"
+                query += "\n, max(CASE"
 
         # update new_label to match current row
         new_label = row['new_label']
-
-        # modify label to make it a valid column name
-        new_label = new_label.replace(' ','_').replace('(','_').replace(')','_')
-        new_label = new_label.replace('/','_').replace('-','_').replace('\\','_')
 
         query += "\n    WHEN "
 
@@ -148,10 +152,14 @@ if __name__ == '__main__':
         query += " THEN " + value_col
 
     # end the final case statement
-    query += "\n  ELSE NULL END AS " + new_label.replace(' ','_')
+    query += "\n  ELSE NULL END) AS " + new_label.replace(' ','_')
 
     query += "\nfrom respiratorycharting rc"
-    query += "\nwhere rc.respchartvalue is not null;"
+    query += "\ninner join patient pt on rc.patientunitstayid = pt.patientunitstayid"
+    query += "\nwhere rc.respchartvalue is not null"
+    query += "\nand pt.hospitalid = {}".format(HOSPITAL)
+    query += "\ngroup by rc.patientunitstayid, respchartoffset, respchartentryoffset"
+    query += ";"
 
     with open('vent-query.sql','w') as fp:
         fp.write(query)
