@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS pf_pao2fio2;
+CREATE TABLE pf_pao2fio2 AS
 select lab.patientunitstayid
   , labresultoffset
   , min(case when labname = 'paO2' then labresult else null end) as PaO2
