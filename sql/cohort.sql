@@ -2,12 +2,12 @@
 DROP TABLE IF EXISTS pf_cohort CASCADE;
 CREATE TABLE pf_cohort as
 select pt.PATIENTUNITSTAYID
-
 -- EXCLUSION FLAGS --
 , case when pt.age = '> 89' then 0
       when pt.age = '' then 0
       when cast(pt.age as numeric) < 16 then 1
     else 0 end as exclusion_non_adult
+    
 -- missing hospital death outcome
 , case
     when coalesce(pt.hospitaldischargestatus,'') = '' then 1
@@ -19,11 +19,9 @@ select pt.PATIENTUNITSTAYID
     when ROW_NUMBER() over (PARTITION BY apv.patientunitstayid ORDER BY pt.hospitaldischargeoffset DESC)
       > 1 then 1
     else 0 end as exclusion_readmission
+
 -- APACHE score only exists for first hospital stay
 , case when aiva.apachescore > 1 then 0 else 1 end as exclusion_no_apache_score
-, case
-    when has_vit.numobs > 0 and has_lab.numobs > 0 and has_med.numobs > 0 then 0
-  else 1 end as exclusion_missing_data
 
 -- excluded column aggregates all the above
 , case

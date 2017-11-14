@@ -4,16 +4,16 @@ CREATE TABLE public.pfratio_labresults as
 --patients with 1 or less lab results
 with lr as(
 SELECT
-distinct lab.patientunitstayid,  
+distinct lab.patientunitstayid,
 count(*)
-FROM 
+FROM
   eicu_crd_phi.lab
 GROUP BY
-  lab.patientunitstayid, 
-  lab.labname, 
-  lab.labresultoffset, 
+  lab.patientunitstayid,
+  lab.labname,
+  lab.labresultoffset,
   lab.labresultrevisedoffset
-HAVING 
+HAVING
 count(*)  <=1 )
 , nc as
 (

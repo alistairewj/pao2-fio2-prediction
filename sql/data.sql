@@ -9,9 +9,9 @@ DROP TABLE IF EXISTS pf_data CASCADE;
 CREATE TABLE pf_data as
 select
   co.patientunitstayid
-  , pf.laboffset
+  , pf.labresultoffset
 
-  , pf.pao2 / pf.fio2 as pao2fio2
+  , round(pf.pao2 / pf.fio2 * 100.0,2) as pao2fio2
   , pf.pao2
   , pf.fio2
 
@@ -33,9 +33,11 @@ select
 from pf_cohort co
 inner join pf_pao2fio2 pf
   on co.patientunitstayid = pf.patientunitstayid
+  and pf.fio2 is not null
+  and pf.pao2 is not null
 -- now left join to all the data tables using the hours
 left join pivoted_vital vi
   on  pf.patientunitstayid = vi.patientunitstayid
-  and pf.laboffset = vi.nursingchartoffset
+  and pf.labresultoffset = vi.nursingchartoffset
 where co.excluded = 0
-order by co.patientunitstayid, pf.laboffset;
+order by co.patientunitstayid, pf.labresultoffset;
