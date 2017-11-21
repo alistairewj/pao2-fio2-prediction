@@ -1,6 +1,7 @@
+-- can copy data out from this table as follows:
+-- \copy d_respiratorycharting to respiratorycharting.csv CSV HEADER;
 DROP TABLE IF EXISTS d_respiratorycharting CASCADE;
 CREATE TABLE d_respiratorycharting AS
-
 -- get percentiles
 with t1 as
 (
