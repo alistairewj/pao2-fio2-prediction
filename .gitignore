@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# annoying OSX file
+.DS_Store
