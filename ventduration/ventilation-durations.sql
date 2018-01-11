@@ -10,7 +10,7 @@
 --    3) Certain elements end the current ventilation event
 --        a) documented extubation ends the current ventilation
 --        b) initiation of non-invasive vent and/or oxygen ends the current vent
--- The ventilation events are numbered consecutively by the `num` column.
+-- The ventilation events are numbered consecutively by the `numseq` column.
 
 
 -- First, identify mechvent, intubation and extubation etc;
@@ -91,7 +91,7 @@ SELECT vc.patientunitstayid,
     -- regenerate ventseq so it is sequential
     ROW_NUMBER() OVER (PARTITION BY vc.patientunitstayid ORDER BY vc.ventseq) AS ventseq,
     MIN(vc.chartoffset) AS startoffset, MAX(vc.chartoffset) AS endoffset,
-    MAX(vc.chartoffset) - MIN(vc.chartoffset) AS duration_minutes
+    MAX(vc.chartoffset) - MIN(vc.chartoffset) AS ventilation_minutes
 FROM ventevents_cumul vc
 GROUP BY vc.patientunitstayid, vc.ventseq
 HAVING MIN(vc.chartoffset) != MAX(vc.chartoffset)
