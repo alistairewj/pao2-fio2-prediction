@@ -83,22 +83,22 @@ WITH ventevents_cumul AS (
         -- this results in a monotonic integer assigned to each instance of ventilation
         CASE WHEN mechvent=1 OR extubation=1 THEN SUM(newvent) 
             OVER (PARTITION BY patientunitstayid ORDER BY chartoffset)
-            ELSE NULL END AS ventnum
+            ELSE NULL END AS ventseq
     FROM ventevents v
 )
 -- create the durations for each mechanical ventilation instance
 SELECT vc.patientunitstayid,
-    -- regenerate ventnum so it is sequential
-    ROW_NUMBER() OVER (PARTITION BY vc.patientunitstayid ORDER BY vc.ventnum) AS ventnum,
+    -- regenerate ventseq so it is sequential
+    ROW_NUMBER() OVER (PARTITION BY vc.patientunitstayid ORDER BY vc.ventseq) AS ventseq,
     MIN(vc.chartoffset) AS startoffset, MAX(vc.chartoffset) AS endoffset,
     MAX(vc.chartoffset) - MIN(vc.chartoffset) AS duration_minutes
 FROM ventevents_cumul vc
-GROUP BY vc.patientunitstayid, vc.ventnum
+GROUP BY vc.patientunitstayid, vc.ventseq
 HAVING MIN(vc.chartoffset) != MAX(vc.chartoffset)
 -- patient had to be mechanically ventilated at least once
 -- i.e. max(mechvent) should be 1
 -- this excludes a frequent situation of NIV/oxygen before intub
--- in these cases, ventnum=0 and max(mechvent)=0, so they are ignored
+-- in these cases, ventseq=0 and max(mechvent)=0, so they are ignored
 AND MAX(vc.mechvent) = 1
-ORDER BY vc.patientunitstayid, vc.ventnum;
+ORDER BY vc.patientunitstayid, vc.ventseq;
 
