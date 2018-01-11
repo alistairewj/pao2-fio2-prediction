@@ -19,7 +19,7 @@ WITH status AS (
            CASE WHEN c.cplitemvalue LIKE 'Intubated/trach-acute%' THEN c.cplitemoffset
                ELSE NULL END AS trach_acute_offset,
            CASE WHEN c.cplitemvalue LIKE 'Intubated/trach-chronic%' THEN c.cplitemoffset
-               ELSE NULL END AS trach_chronic_offset,
+               ELSE NULL END AS trach_chronic_offset
     FROM careplangeneral c
     WHERE c.cplitemvalue LIKE 'Do not resuscitate%'
         OR c.cplitemvalue LIKE 'Comfort measures only%'
@@ -31,5 +31,5 @@ WITH status AS (
   )
 SELECT s.patientunitstayid, s.dnr_offset, s.cmo_offset, s.endoflife_offset, 
        s.terminal_offset, s.bedside_trach_offset, s.trach_acute_offset,
-       s.trach_chronic_offset, s.wears_glasses
+       s.trach_chronic_offset
 FROM status s;
