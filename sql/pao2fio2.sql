@@ -20,10 +20,15 @@ with t1 as
   group by lab.patientunitstayid, lab.labresultoffset
 )
 select
-  t1.patientunitstayid
+    t1.patientunitstayid
   , t1.labresultoffset as pfoffset
   , t1.pao2
   , t1.fio2
   , round(pf.pao2 / pf.fio2 * 100.0,2) as pao2fio2
-from t1
+from pf_cohort co
+inner join t1
+  on co.patientunitstayid = t1.patientunitstayid
+where t1.fio2 is not null
+and t1.pao2 is not null
+and co.excluded = 0
 order by t1.patientunitstayid, t1.labresultoffset;
