@@ -10,7 +10,7 @@ CREATE TABLE pf_vital_data as
 --
 SELECT DISTINCT
     pf.patientunitstayid
-  , pf.labresultoffset
+  , pf.pfoffset
 
   , pf.pao2
   , pf.fio2
