@@ -18,73 +18,73 @@ SELECT DISTINCT
 
   -- vitals
   , LAST_VALUE(vi.HeartRate) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS HeartRate
   , LAST_VALUE(vi.RespiratoryRate) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS RespiratoryRate
   , LAST_VALUE(vi.o2saturation) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS o2saturation
   , LAST_VALUE(vi.nibp_systolic) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS nibp_systolic
   , LAST_VALUE(vi.nibp_diastolic) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS nibp_diastolic
   , LAST_VALUE(vi.nibp_mean) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS nibp_mean
   , LAST_VALUE(vi.ibp_systolic) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS ibp_systolic
   , LAST_VALUE(vi.ibp_diastolic) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS ibp_diastolic
   , LAST_VALUE(vi.ibp_mean) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS ibp_mean
   , LAST_VALUE(vi.map) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS map
   , LAST_VALUE(vi.temperature) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
       AS temperature
   , LAST_VALUE(vi.gcs) OVER (
-        partition by co.patientunitstayid, pf.labresultoffset
+        partition by pf.patientunitstayid, pf.pfoffset
         order by vi.chartoffset
         ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
     )
@@ -93,6 +93,6 @@ from pf_pao2fio2 pf
 -- now left join to all the data tables using the hours
 left join pivoted_vital vi
   on  pf.patientunitstayid = vi.patientunitstayid
-  and pf.labresultoffset > vi.chartoffset
-  and pf.labresultoffset <= vi.chartoffset + 120
-order by co.patientunitstayid, pf.labresultoffset;
+  and pf.pfoffset > vi.chartoffset
+  and pf.pfoffset <= vi.chartoffset + 360
+order by pf.patientunitstayid, pf.pfoffset;
