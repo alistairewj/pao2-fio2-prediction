@@ -24,7 +24,7 @@ select
   , t1.labresultoffset as pfoffset
   , t1.pao2
   , t1.fio2
-  , round(pf.pao2 / pf.fio2 * 100.0,2) as pao2fio2
+  , round(t1.pao2 / t1.fio2 * 100.0,2) as pao2fio2
 from pf_cohort co
 inner join t1
   on co.patientunitstayid = t1.patientunitstayid
