@@ -31,4 +31,6 @@ inner join t1
 where t1.fio2 is not null
 and t1.pao2 is not null
 and co.excluded = 0
+-- only include labs measured at least 4 hours after ICU admission
+and t1.labresultoffset > (4*60)
 order by t1.patientunitstayid, t1.labresultoffset;
