@@ -84,7 +84,7 @@ with vi_stg as
   SELECT
     patientunitstayid
     , chartoffset
-    -- propogate heartrate forward over nulls
+    -- propagate heartrate forward over nulls
     , FIRST_VALUE(heartrate) OVER
     (
       PARTITION BY patientunitstayid, heartrate_partition
