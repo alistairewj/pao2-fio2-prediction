@@ -1,5 +1,21 @@
 DROP TABLE IF EXISTS pf_vent_data CASCADE;
-CREATE TABLE pf_vent_data as
+CREATE TABLE pf_vent_data AS
+with vent_stg AS
+(  SELECT
+    patientunitstayid
+    , chartoffset
+
+peep , CASE WHEN peep IS NULL THEN 0 ELSE 1 END AS peep_null , 
+SUM(CASE WHEN peep IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS peep_partition
+FROM pivoted_vent
+),
+ven AS(
+SELECT
+patientunitstayid,
+chartoffset,
+FIRST_VALUE(peep) OVER (PARTITION BY patientunitstayid, peep_partition ORDER BY chartoffset) AS peep
+    FROM vent_stg
+)
 SELECT DISTINCT
     pf.patientunitstayid
   , pf.pfoffset
@@ -17,9 +33,9 @@ SELECT DISTINCT
 -- source from our "base" cohort
 from pf_pao2fio2 pf
 -- now left join to the lab data
-left join ventevents t
-  on  pf.patientunitstayid = t.patientunitstayid
+LEFT join ven
+  on  pf.patientunitstayid = ven.patientunitstayid
   -- last value within 1 day preceeding
-  and pf.pfoffset >= t.chartoffset
-  and pf.pfoffset <= t.chartoffset + 240
+  and pf.pfoffset >= ven.chartoffset
+  and pf.pfoffset <= ven.chartoffset + 240
 order by pf.patientunitstayid, pf.pfoffset;
