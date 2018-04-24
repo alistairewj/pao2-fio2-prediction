@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS pf_lab_data CASCADE;
-CREATE TABLE pf_lab_data AS
+DROP TABLE IF EXISTS public.pf_lab_data_v2 CASCADE;
+CREATE TABLE public.pf_lab_data_v2 AS
 
 with lab_stg AS
 (  SELECT
-    patientunitstayid
-    , chartoffset
+    patientunitstayid,
+    chartoffset,
 
 albumin , CASE WHEN albumin IS NULL THEN 0 ELSE 1 END AS albumin_null , 
 SUM(CASE WHEN albumin IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS albumin_partition,
@@ -42,7 +42,7 @@ SUM(CASE WHEN hco3 IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstay
 hematocrit , CASE WHEN hematocrit IS NULL THEN 0 ELSE 1 END AS hematocrit_null , 
 SUM(CASE WHEN hematocrit IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS hematocrit_partition,
 
-hemoglobi , CASE WHEN hemoglobin IS NULL THEN 0 ELSE 1 END AS hemoglobin_null , 
+hemoglobin , CASE WHEN hemoglobin IS NULL THEN 0 ELSE 1 END AS hemoglobin_null , 
 SUM(CASE WHEN hemoglobin IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS hemoglobin_partition,
 
 inr , CASE WHEN inr IS NULL THEN 0 ELSE 1 END AS inr_null , 
@@ -64,7 +64,7 @@ sodium , CASE WHEN sodium IS NULL THEN 0 ELSE 1 END AS sodium_null ,
 SUM(CASE WHEN sodium IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS sodium_partition,
 
 wbc , CASE WHEN wbc IS NULL THEN 0 ELSE 1 END AS wbc_null , 
-SUM(CASE WHEN wbc IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS wbc_partition,
+SUM(CASE WHEN wbc IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS wbc_partition
 
 FROM pivoted_lab
 )
@@ -207,7 +207,7 @@ SELECT DISTINCT
       ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
   ) AS alp
 -- source from our "base" cohort
-from pf_pao2fio2 pf
+from public.pf_pao2fio2_v2 pf
 -- now left join to the lab data
 left join pivoted_lab t
   on  pf.patientunitstayid = t.patientunitstayid
