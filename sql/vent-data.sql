@@ -7,7 +7,7 @@ with vent_stg AS
 
 peep , CASE WHEN peep IS NULL THEN 0 ELSE 1 END AS peep_null , 
 SUM(CASE WHEN peep IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS peep_partition
-FROM pivoted_vent
+FROM vent_unpivot_rc
 ),
 ven AS(
 SELECT
