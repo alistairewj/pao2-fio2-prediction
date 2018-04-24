@@ -5,8 +5,9 @@
 --  Columns: M features
 -- the "pfoffset" column is the minutes since ICU admission
 -- it can be negative since some labs are measured before ICU admission
-DROP TABLE IF EXISTS pf_data CASCADE;
-CREATE TABLE pf_data as
+SET search_path to public;
+DROP TABLE IF EXISTS pf_data_v2 CASCADE;
+CREATE TABLE pf_data_v2 as
 SELECT
     pf.patientunitstayid
   , pf.pfoffset
@@ -21,13 +22,9 @@ SELECT
   , vd.heartrate
   , vd.respiratoryrate
   , vd.o2saturation
-  , vd.nibp_systolic
-  , vd.nibp_diastolic
-  , vd.nibp_mean
-  , vd.ibp_systolic
-  , vd.ibp_diastolic
-  , vd.ibp_mean
-  , vd.map
+  , vd.bp_systolic
+  , vd.bp_diastolic
+  , vd.bp_mean
   , vd.temperature
   , vd.gcs
 
@@ -52,18 +49,18 @@ SELECT
   , ld.ast
   , ld.alp
 
-from pf_pao2fio2 pf
-left join ventdurations vent
+from pf_pao2fio2_v2 pf
+left join vent_unpivot_rc vent
   on pf.patientunitstayid = vent.patientunitstayid
-  and pf.pfoffset >= vent.startoffset
-  and pf.pfoffset <= vent.endoffset
-left join pf_vent_data ve
+AND pf.pfoffset >= vent.chartoffset
+  AND pf.pfoffset <= vent.chartoffset
+left join pf_vent_data_v2 ve
   on pf.patientunitstayid = ve.patientunitstayid
   and pf.pfoffset = ve.pfoffset
-left join pf_vital_data vd
+left join pf_vital_data_v2 vd
   on pf.patientunitstayid = vd.patientunitstayid
   and pf.pfoffset = vd.pfoffset
-left join pf_lab_data ld
+left join pf_lab_data_v2 ld
   on pf.patientunitstayid = ld.patientunitstayid
   and pf.pfoffset = ld.pfoffset
 order by pf.patientunitstayid, pf.pfoffset;
