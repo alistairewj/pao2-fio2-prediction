@@ -3,9 +3,8 @@ CREATE TABLE public.pf_lab_data_v2 AS
 
 with lab_stg AS
 (  SELECT
-    patientunitstayid,
-    chartoffset,
-
+patientunitstayid,
+chartoffset,
 albumin , CASE WHEN albumin IS NULL THEN 0 ELSE 1 END AS albumin_null , 
 SUM(CASE WHEN albumin IS NULL THEN 0 ELSE 1 END) OVER (PARTITION BY patientunitstayid ORDER BY chartoffset) AS albumin_partition,
 
@@ -72,8 +71,8 @@ FROM pivoted_lab
 ,la AS
 (
   SELECT
-    patientunitstayid,
-    chartoffset,
+patientunitstayid,
+chartoffset,
 FIRST_VALUE(albumin) OVER (PARTITION BY patientunitstayid, albumin_partition ORDER BY chartoffset) AS albumin,
 FIRST_VALUE(alp) OVER (PARTITION BY patientunitstayid, alp_partition ORDER BY chartoffset) AS alp,
 FIRST_VALUE(alt) OVER (PARTITION BY patientunitstayid, alt_partition ORDER BY chartoffset) AS alt,
@@ -209,7 +208,7 @@ SELECT DISTINCT
 -- source from our "base" cohort
 from public.pf_pao2fio2_v2 pf
 -- now left join to the lab data
-left join pivoted_lab t
+left join la t
   on  pf.patientunitstayid = t.patientunitstayid
   -- last value within 1 day preceeding
   and pf.pfoffset >= t.chartoffset
