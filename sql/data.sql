@@ -52,8 +52,7 @@ SELECT
 from pf_pao2fio2_v2 pf
 left join vent_unpivot_rc vent
   on pf.patientunitstayid = vent.patientunitstayid
-AND pf.pfoffset >= vent.chartoffset
-  AND pf.pfoffset <= vent.chartoffset
+AND pf.pfoffset = vent.chartoffset
 left join pf_vent_data_v2 ve
   on pf.patientunitstayid = ve.patientunitstayid
   and pf.pfoffset = ve.pfoffset
