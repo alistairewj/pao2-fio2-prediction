@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS public.pf_vent_data_v2 CASCADE;
 CREATE TABLE public.pf_vent_data_v2 AS
 with vent_stg AS
-(  SELECT
+(SELECT
     patientunitstayid, 
     chartoffset,
 peep , CASE WHEN peep IS NULL THEN 0 ELSE 1 END AS peep_null , 
@@ -21,9 +21,9 @@ SELECT DISTINCT
   , pf.pao2
   , pf.fio2
   , pf.pao2fio2
-  , LAST_VALUE(peep) OVER (
+  , LAST_VALUE(ven.peep) OVER (
       partition by pf.patientunitstayid, pf.pfoffset
-      order by chartoffset
+      order by ven.chartoffset
       ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
   ) AS peep
 -- source from our "base" cohort
